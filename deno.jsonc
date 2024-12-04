@@ -1,0 +1,5 @@
+{
+  "name": "@vwkd/gkv-premium-de",
+  "version": "0.0.1",
+  "exports": "./src/main.ts"
+}
