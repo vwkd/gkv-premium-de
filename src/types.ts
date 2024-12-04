@@ -8,10 +8,14 @@ export interface Parameter {
   jahr: number;
   /**
    * Minimale Bemessungsgrundlage
+   *
+   * - nennt auch Mindestbemessungsgrundlage, Mindestbemessungsgrenze, Mindestbeitragsbemessungsgrundlage, etc.
    */
   bemessungsgrundlageMin: number;
   /**
    * Maximale Bemessungsgrundlage
+   *
+   * - nennt auch Beitragsbemessungsgrenze
    */
   bemessungsgrundlageMax: number;
   /**
