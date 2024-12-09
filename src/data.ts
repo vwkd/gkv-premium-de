@@ -10,24 +10,130 @@ import type { Parameter } from "./types.ts";
  *   - [Lohn-Info - Entwicklung des Beitragssatzes zur Pflegeversicherung](https://www.lohn-info.de/pflegeversicherung_entwicklung_beitragssatz.html)
  *   - [Lohn-Info - Freiwillige Krankenversicherung in der gesetzlichen Krankenkasse](https://www.lohn-info.de/krankenversicherung_freiwillig.html)
  *   - [GKV-Wiki - Entwicklung der Beitragsbemessungsgrenze (BBG)](https://www.krankenkassen.wiki/cms/gkv/info/grundlagen/gkv/bbg/entwicklung-der-beitragsbemessungsgrenze)
+ *   - [psponline - Beitragsentwicklung GKV / PV](https://www.psponline.de/dokumente/sonstiges/GKVBeitragsentwicklung.pdf)
  */
 // todo: fill in remaining `bemessungsgrundlageMin`
 export const parameters: Parameter[] = [
-  // todo: earlier years
   {
     jahr: 1970,
     bemessungsgrundlageMin: undefined ?? 0,
     bemessungsgrundlageMax: 14_400,
     beitragssatz: 0.082,
   },
-  // todo: 1971-1979
+  {
+    jahr: 1971,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 17_100,
+    beitragssatz: 0.082,
+  },
+  {
+    jahr: 1972,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 18_900,
+    beitragssatz: 0.084,
+  },
+  {
+    jahr: 1973,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 20_700,
+    beitragssatz: 0.092,
+  },
+  {
+    jahr: 1974,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 22_500,
+    beitragssatz: 0.095,
+  },
+  {
+    jahr: 1975,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 25_200,
+    beitragssatz: 0.105,
+  },
+  {
+    jahr: 1976,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 27_900,
+    beitragssatz: 0.113,
+  },
+  {
+    jahr: 1977,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 30_600,
+    beitragssatz: 0.114,
+  },
+  {
+    jahr: 1978,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 33_300,
+    beitragssatz: 0.114,
+  },
+  {
+    jahr: 1979,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 36_000,
+    beitragssatz: 0.112,
+  },
   {
     jahr: 1980,
     bemessungsgrundlageMin: undefined ?? 0,
     bemessungsgrundlageMax: 37_800,
     beitragssatz: 0.114,
   },
-  // todo: 1981-1989
+  {
+    jahr: 1981,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 39_600,
+    beitragssatz: 0.118,
+  },
+  {
+    jahr: 1982,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 42_300,
+    beitragssatz: 0.12,
+  },
+  {
+    jahr: 1983,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 45_000,
+    beitragssatz: 0.118,
+  },
+  {
+    jahr: 1984,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 46_800,
+    beitragssatz: 0.114,
+  },
+  {
+    jahr: 1985,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 48_600,
+    beitragssatz: 0.118,
+  },
+  {
+    jahr: 1986,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 50_400,
+    beitragssatz: 0.122,
+  },
+  {
+    jahr: 1987,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 51_300,
+    beitragssatz: 0.126,
+  },
+  {
+    jahr: 1988,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 54_000,
+    beitragssatz: 0.129,
+  },
+  {
+    jahr: 1989,
+    bemessungsgrundlageMin: undefined ?? 0,
+    bemessungsgrundlageMax: 54_900,
+    beitragssatz: 0.129,
+  },
   {
     jahr: 1990,
     bemessungsgrundlageMin: undefined ?? 0,
