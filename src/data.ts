@@ -134,8 +134,9 @@ export const parameters: Parameter[] = [
     bemessungsgrundlageMin: undefined ?? 0,
     bemessungsgrundlageMax: 42_300,
     // erste Hälfte des Jahres war 14,3%, zweite Hälfte 13,8%
-    beitragssatz: (0.143 + 0.138) / 2,
-    sonderbeitragssatz: 0.009,
+    beitragssatz: (0.143 + (0.138 + 0.009)) / 2,
+    // rechne in beitragssatz dazu da nur ab zweiter Hälfte des Jahres
+    // sonderbeitragssatz: 0.009,
     pflegeversicherungssatz: 0.017,
   },
   {

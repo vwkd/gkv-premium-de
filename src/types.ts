@@ -28,7 +28,7 @@ export interface Parameter {
   /**
    * Sonderbeitragssatz
    *
-   * - von 2005 bis 2014
+   * - von zweiter Hälfte des Jahres 2005 bis 2014
    */
   sonderbeitragssatz?: number;
   /**
