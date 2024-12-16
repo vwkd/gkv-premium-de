@@ -23,8 +23,8 @@ export class Premium {
    *
    * @returns Jahr
    */
-  jahr(): number {
-    return this.#parameter.jahr;
+  year(): number {
+    return this.#parameter.year;
   }
 
   /**
@@ -32,10 +32,10 @@ export class Premium {
    *
    * @returns Liste der Bemessungsgrenzen
    */
-  bemessungsgrenzen(): [number, number] {
+  baseBounds(): [number, number] {
     return [
-      this.#parameter.bemessungsgrundlageMin,
-      this.#parameter.bemessungsgrundlageMax,
+      this.#parameter.baseMin,
+      this.#parameter.baseMax,
     ];
   }
 
@@ -44,12 +44,12 @@ export class Premium {
    *
    * @returns Liste der Beitragssätze
    */
-  beitragssätze(): number[] {
+  rates(): number[] {
     return [
-      this.#parameter.beitragssatz,
-      this.#parameter.sonderbeitragssatz,
-      this.#parameter.zusatzbeitragssatz,
-      this.#parameter.pflegeversicherungssatz,
+      this.#parameter.rate,
+      this.#parameter.rateExtra,
+      this.#parameter.rateAdditional,
+      this.#parameter.rateCare,
     ].filter((satz) => satz !== undefined);
   }
 
@@ -59,9 +59,9 @@ export class Premium {
    * @params {number} zvE zu versteuerndes Einkommen, natürliche Zahl
    * @returns Bemessungsgrundlage
    */
-  bemessungsgrundlage(zvE: number): number {
-    const min = this.#parameter.bemessungsgrundlageMin;
-    const max = this.#parameter.bemessungsgrundlageMax;
+  base(zvE: number): number {
+    const min = this.#parameter.baseMin;
+    const max = this.#parameter.baseMax;
 
     return Math.max(min, Math.min(max, zvE));
   }
@@ -74,8 +74,8 @@ export class Premium {
    * @param {number} zvE zu versteuerndes Einkommen, natürliche Zahl
    * @returns {number} Beitrag
    */
-  beitrag(zvE: number): number {
-    return this.beitragssatz() * this.bemessungsgrundlage(zvE);
+  amount(zvE: number): number {
+    return this.rate() * this.base(zvE);
   }
 
   /**
@@ -83,8 +83,8 @@ export class Premium {
    *
    * @returns Beitragssatz
    */
-  beitragssatz(): number {
-    return this.beitragssätze()
+  rate(): number {
+    return this.rates()
       .reduce((acc, satz) => (acc + satz), 0);
   }
 }

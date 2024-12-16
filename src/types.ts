@@ -5,39 +5,39 @@ export interface Parameter {
   /**
    * Jahr für das die Parameter gelten
    */
-  jahr: number;
+  year: number;
   /**
    * Minimale Bemessungsgrundlage
    *
    * - nennt auch Mindestbemessungsgrundlage, Mindestbemessungsgrenze, Mindestbeitragsbemessungsgrundlage, etc.
    */
-  bemessungsgrundlageMin: number;
+  baseMin: number;
   /**
    * Maximale Bemessungsgrundlage
    *
    * - nennt auch Beitragsbemessungsgrenze
    */
-  bemessungsgrundlageMax: number;
+  baseMax: number;
   /**
    * Beitragssatz
    *
    * - mit Krankentagegeld
    */
   // todo: entferne Krankentagegeld da nicht für Freiwillig Versicherte?
-  beitragssatz: number;
+  rate: number;
   /**
    * Sonderbeitragssatz
    *
    * - von zweiter Hälfte des Jahres 2005 bis 2014
    */
-  sonderbeitragssatz?: number;
+  rateExtra?: number;
   /**
    * Zusatzbeitragssatz
    *
    * - seit 2015
    * - durchschnittlich
    */
-  zusatzbeitragssatz?: number;
+  rateAdditional?: number;
   /**
    * Pflegeversicherungssatz
    *
@@ -45,5 +45,5 @@ export interface Parameter {
    * - ohne Zuschlag für Kinderlose
    * - ohne Abschlag für mehrere Kinder
    */
-  pflegeversicherungssatz?: number;
+  rateCare?: number;
 }
