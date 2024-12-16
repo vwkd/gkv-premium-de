@@ -13,13 +13,12 @@ GKV Beitragsrechner für Deutschland
 ## Benutzung
 
 ```ts
-import { parameters, Premium } from "@vwkd/gkv-premium-de";
+import { Premium } from "@vwkd/gkv-premium-de";
 
 const jahr = 2020;
 const zvE = 12_740;
 
-const parameter = parameters.find((s) => s.jahr == jahr);
-const premium = new Premium(parameter);
+const premium = new Premium(jahr);
 
 console.log(premium.base(zvE)); // 12740
 console.log(premium.amount(zvE)); // 2388.75

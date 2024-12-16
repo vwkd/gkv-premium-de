@@ -1,20 +1,29 @@
 import type { Parameter } from "./types.ts";
 
-export { parameters } from "./data.ts";
-export type { Parameter } from "./types.ts";
+import { parameters } from "./data.ts";
 
 /**
  * GKV Beitragsrechner für Deutschland
  */
 export class Premium {
+  #year: number;
   #parameter: Parameter;
 
   /**
    * Erstelle GKV Beitragsrechner für Jahr
    *
-   * @param parameter Parameter für Jahr
+   * @param year Jahr
    */
-  constructor(parameter: Parameter) {
+  constructor(year: number) {
+    const parameter = parameters.find(({ year: y }) =>
+      Array.isArray(y) ? y[0] <= year && year <= y[1] : y === year
+    );
+
+    if (parameter === undefined) {
+      throw new Error(`Parameter for year '${year}' not found`);
+    }
+
+    this.#year = year;
     this.#parameter = parameter;
   }
 
@@ -24,7 +33,7 @@ export class Premium {
    * @returns Jahr
    */
   get year(): number {
-    return this.#parameter.year;
+    return this.#year;
   }
 
   /**

@@ -9,8 +9,7 @@ const years = parameters
 
 for (const year of years) {
   Deno.test(`${year}`, () => {
-    const parameter = parameters.find((p) => p.year == year)!;
-    const premium = new Premium(parameter);
+    const premium = new Premium(year);
 
     const rate = premium.rate();
 
