@@ -28,6 +28,19 @@ export class Premium {
   }
 
   /**
+   * Liste die Jahre
+   *
+   * @returns Liste der Jahre
+   */
+  static get years(): number[] {
+    return parameters.flatMap(({ year }) =>
+      Array.isArray(year)
+        ? Array.from({ length: year[1] - year[0] + 1 }, (_, i) => year[0] + i)
+        : year
+    );
+  }
+
+  /**
    * Liste Jahr
    *
    * @returns Jahr
