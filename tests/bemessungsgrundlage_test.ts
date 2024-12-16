@@ -12,7 +12,7 @@ for (const year of years) {
     const parameter = parameters.find((p) => p.year == year)!;
     const premium = new Premium(parameter);
 
-    const [min, max] = premium.baseBounds();
+    const [min, max] = premium.baseBounds;
     const mid = (min + max) / 2;
 
     assertEquals(premium.base(0), min);

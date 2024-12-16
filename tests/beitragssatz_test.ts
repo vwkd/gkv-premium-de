@@ -10,7 +10,7 @@ for (const year of years) {
     const parameter = parameters.find((p) => p.year == year)!;
     const premium = new Premium(parameter);
 
-    const rate = premium.rates()
+    const rate = premium.rates
       .reduce((acc, curr) => acc + curr, 0);
 
     assertEquals(premium.rate(), rate);

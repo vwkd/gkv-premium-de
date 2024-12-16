@@ -23,7 +23,7 @@ export class Premium {
    *
    * @returns Jahr
    */
-  year(): number {
+  get year(): number {
     return this.#parameter.year;
   }
 
@@ -32,7 +32,7 @@ export class Premium {
    *
    * @returns Liste der Bemessungsgrenzen
    */
-  baseBounds(): [number, number] {
+  get baseBounds(): [number, number] {
     return [
       this.#parameter.baseMin,
       this.#parameter.baseMax,
@@ -44,7 +44,7 @@ export class Premium {
    *
    * @returns Liste der Beitragssätze
    */
-  rates(): number[] {
+  get rates(): number[] {
     return [
       this.#parameter.rate,
       this.#parameter.rateExtra,
@@ -84,7 +84,7 @@ export class Premium {
    * @returns Beitragssatz
    */
   rate(): number {
-    return this.rates()
+    return this.rates
       .reduce((acc, satz) => (acc + satz), 0);
   }
 }

@@ -14,7 +14,7 @@ for (const year of years) {
 
     const rate = premium.rate();
 
-    const [min, max] = premium.baseBounds();
+    const [min, max] = premium.baseBounds;
     const mid = (min + max) / 2;
 
     assertEquals(premium.amount(0), rate * min);
